@@ -4,7 +4,6 @@
  */
 package servis;
 
-import java.util.Date;
 import java.util.List;
 import parsisten.Peminjaman;
 
@@ -18,8 +17,6 @@ public interface ServicePeminjaman {
     void hapusData(String id);
     
     List<Peminjaman> ambilData();
-    List<Peminjaman> getByTglPinjam(Date tgl);
-    List<Peminjaman> getByTglKembali(Date tgl);
     List<Peminjaman> getByPeminjam(String nama);
     List<Peminjaman> getBystatus(String status);
     List<Peminjaman> getByBuku(String buku);

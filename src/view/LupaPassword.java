@@ -125,7 +125,7 @@ public class LupaPassword extends javax.swing.JDialog {
 
         btn_next1.setBackground(new java.awt.Color(0, 0, 200));
         btn_next1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_next1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_next1.setForeground(new java.awt.Color(0, 0, 200));
         btn_next1.setText("NEXT");
         btn_next1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +181,7 @@ public class LupaPassword extends javax.swing.JDialog {
 
         btn_next2.setBackground(new java.awt.Color(0, 0, 200));
         btn_next2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_next2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_next2.setForeground(new java.awt.Color(0, 0, 200));
         btn_next2.setText("VERIFIKASI");
         btn_next2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +198,7 @@ public class LupaPassword extends javax.swing.JDialog {
 
         btn_kirim.setBackground(new java.awt.Color(0, 200, 0));
         btn_kirim.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_kirim.setForeground(new java.awt.Color(255, 255, 255));
+        btn_kirim.setForeground(new java.awt.Color(0, 200, 0));
         btn_kirim.setText("Kirim ulang kode");
         btn_kirim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,7 +250,7 @@ public class LupaPassword extends javax.swing.JDialog {
 
         btn_next3.setBackground(new java.awt.Color(0, 0, 200));
         btn_next3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_next3.setForeground(new java.awt.Color(255, 255, 255));
+        btn_next3.setForeground(new java.awt.Color(0, 0, 200));
         btn_next3.setText("UBAH PASWWORD");
         btn_next3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -1,4 +1,4 @@
-INSER INTO petugas (id_petugas, nama, email, alamat, jenis_kelamin, telephone, username, password, level) VALUES (
+INSERT INTO petugas (id_petugas, nama, email, alamat, jenis_kelamin, telephone, username, password, level) VALUES (
 'PT001', 'Nur Fatiq', 'fatiq5127@gmail.com', 'Abar-abir Bungah Gresik', 'L', '087759040240', 'Anomali99', 'c831e9b5f6c9bab6b23c26c2dab2a29c', 'Admin'
 );
 
@@ -538,7 +538,7 @@ INSERT INTO buku (id_buku, judul, subjudul, isbn, bahasa, penerbit, tahun_terbit
 ('BK231202049','Seriangan Hujan','Seriangan Hujan yang Mendamaikan','9780316182009','Indonesia','Albert Whitman & Company','2024',320,260),
 ('BK231202050','Pintu Menuju Dunia Lain','Pintu Menuju Dunia Lain yang Ajaib','9780679601825','Indonesia','Rodale Books','2025',440,180);
 
-INSER INTO kategori_buku (id_buku, id_kategori) VALUES 
+INSERT INTO kategori_buku (id_buku, id_kategori) VALUES 
 ('BK231202001','K001'),('BK231202001','K044'),('BK231202001','K049'),
 ('BK231202002','K002'),('BK231202002','K045'),('BK231202002','K050'),
 ('BK231202003','K003'),('BK231202003','K046'),('BK231202003','K001'),

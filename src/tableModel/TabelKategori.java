@@ -16,7 +16,7 @@ import parsisten.Kategori;
 public class TabelKategori extends AbstractTableModel{
 
     private List<Kategori> list = new ArrayList<>();
-    private final String[] headerName = {"NO", "ID Buku", "Katgori", "Jumlah Buku","Jumlah Skripsi"};
+    private final String[] headerName = {"NO", "ID", "Katgori", "Jumlah Buku","Jumlah Skripsi"};
     
     public void clear (){
         list.clear();

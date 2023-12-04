@@ -53,10 +53,10 @@ public class Profil extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         tf_level = new javax.swing.JTextField();
-        tf_jk = new javax.swing.JTextField();
         btn_simpan = new javax.swing.JButton();
         btn_batal = new javax.swing.JButton();
         btn_batal1 = new javax.swing.JButton();
+        cbx_jk = new javax.swing.JComboBox<>();
 
         pn_conten.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -128,14 +128,9 @@ public class Profil extends javax.swing.JPanel {
         tf_level.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_level.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
 
-        tf_jk.setEditable(false);
-        tf_jk.setForeground(new java.awt.Color(68, 50, 124));
-        tf_jk.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tf_jk.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-
         btn_simpan.setBackground(new java.awt.Color(0, 200, 0));
         btn_simpan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_simpan.setForeground(new java.awt.Color(255, 255, 255));
+        btn_simpan.setForeground(new java.awt.Color(0, 200, 0));
         btn_simpan.setText("SIMPAN");
         btn_simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,7 +140,7 @@ public class Profil extends javax.swing.JPanel {
 
         btn_batal.setBackground(new java.awt.Color(200, 0, 0));
         btn_batal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_batal.setForeground(new java.awt.Color(255, 255, 255));
+        btn_batal.setForeground(new java.awt.Color(200, 0, 0));
         btn_batal.setText("BATAL");
         btn_batal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,13 +150,17 @@ public class Profil extends javax.swing.JPanel {
 
         btn_batal1.setBackground(new java.awt.Color(0, 0, 200));
         btn_batal1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_batal1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_batal1.setForeground(new java.awt.Color(0, 0, 200));
         btn_batal1.setText("UBAH PASSWORD");
         btn_batal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_batal1ActionPerformed(evt);
             }
         });
+
+        cbx_jk.setForeground(new java.awt.Color(68, 50, 124));
+        cbx_jk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "L", "P" }));
+        cbx_jk.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(68, 50, 124)));
 
         javax.swing.GroupLayout pn_contenLayout = new javax.swing.GroupLayout(pn_conten);
         pn_conten.setLayout(pn_contenLayout);
@@ -171,11 +170,6 @@ public class Profil extends javax.swing.JPanel {
             .addGroup(pn_contenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pn_contenLayout.createSequentialGroup()
-                        .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pn_contenLayout.createSequentialGroup()
                         .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tf_alamat)
@@ -190,24 +184,26 @@ public class Profil extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_batal, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_simpan))
+                                .addComponent(btn_simpan)))
+                        .addContainerGap())
+                    .addGroup(pn_contenLayout.createSequentialGroup()
+                        .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel8)
                             .addGroup(pn_contenLayout.createSequentialGroup()
                                 .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel8)
-                                    .addGroup(pn_contenLayout.createSequentialGroup()
-                                        .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tf_level, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel13))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(tf_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                    .addComponent(tf_level, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel13))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(cbx_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         pn_contenLayout.setVerticalGroup(
             pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,21 +235,22 @@ public class Profil extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addGap(5, 5, 5)
-                .addComponent(tf_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel13))
-                .addGap(5, 5, 5)
-                .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_level, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_simpan)
+                .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pn_contenLayout.createSequentialGroup()
+                        .addComponent(tf_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_level, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbx_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn_contenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_batal)
-                        .addComponent(btn_batal1)))
+                        .addComponent(btn_batal1))
+                    .addComponent(btn_simpan))
                 .addContainerGap())
         );
 
@@ -265,7 +262,9 @@ public class Profil extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pn_conten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pn_conten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -281,6 +280,7 @@ public class Profil extends javax.swing.JPanel {
         mod.setEmail(tf_email.getText());
         mod.setAlamat(tf_alamat.getText());
         mod.setUsername(tf_username.getText());
+        mod.setJenisKelamin(cbx_jk.getSelectedItem().toString().charAt(0));
         
         servis.ubahData(mod);
         jLabel1.requestFocus();
@@ -299,6 +299,7 @@ public class Profil extends javax.swing.JPanel {
     private javax.swing.JButton btn_batal;
     private javax.swing.JButton btn_batal1;
     private javax.swing.JButton btn_simpan;
+    private javax.swing.JComboBox<String> cbx_jk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -313,7 +314,6 @@ public class Profil extends javax.swing.JPanel {
     private javax.swing.JTextField tf_alamat;
     private javax.swing.JTextField tf_email;
     private javax.swing.JTextField tf_id;
-    private javax.swing.JTextField tf_jk;
     private javax.swing.JTextField tf_level;
     private javax.swing.JTextField tf_nama;
     private javax.swing.JTextField tf_tlp;
@@ -327,7 +327,7 @@ public class Profil extends javax.swing.JPanel {
         tf_email.setText(mod.getEmail());
         tf_alamat.setText(mod.getAlamat());
         tf_level.setText(mod.getLevel());
-        tf_jk.setText(mod.getJenisKelamin().toString());
+        cbx_jk.setSelectedItem(mod.getJenisKelamin().toString());
         tf_username.setText(mod.getUsername());
         jLabel1.requestFocus();
     }

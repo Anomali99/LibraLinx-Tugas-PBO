@@ -763,14 +763,12 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="7">
+                  <StringArray count="5">
                     <StringItem index="0" value="NO PEMINJAMAN"/>
                     <StringItem index="1" value="NAMA PEMINJAM"/>
                     <StringItem index="2" value="STATUS"/>
-                    <StringItem index="3" value="TANGGAL PINJAM"/>
-                    <StringItem index="4" value="TANGGAL KEMBALI"/>
-                    <StringItem index="5" value="JUDUL BUKU"/>
-                    <StringItem index="6" value="JUDUL SKRIPSI"/>
+                    <StringItem index="3" value="JUDUL BUKU"/>
+                    <StringItem index="4" value="JUDUL SKRIPSI"/>
                   </StringArray>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

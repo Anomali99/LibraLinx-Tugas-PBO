@@ -142,7 +142,7 @@ public class UbahPassword extends javax.swing.JDialog {
 
         btn_batal.setBackground(new java.awt.Color(200, 0, 0));
         btn_batal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_batal.setForeground(new java.awt.Color(255, 255, 255));
+        btn_batal.setForeground(new java.awt.Color(200, 0, 0));
         btn_batal.setText("BATAL");
         btn_batal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +152,7 @@ public class UbahPassword extends javax.swing.JDialog {
 
         btn_simpan.setBackground(new java.awt.Color(0, 200, 0));
         btn_simpan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_simpan.setForeground(new java.awt.Color(255, 255, 255));
+        btn_simpan.setForeground(new java.awt.Color(0, 200, 0));
         btn_simpan.setText("SIMPAN");
         btn_simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

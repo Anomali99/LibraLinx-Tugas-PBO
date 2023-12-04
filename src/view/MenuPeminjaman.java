@@ -561,7 +561,7 @@ public class MenuPeminjaman extends javax.swing.JPanel {
 
         cbx_cari.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         cbx_cari.setForeground(new java.awt.Color(204, 204, 204));
-        cbx_cari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NO PEMINJAMAN", "NAMA PEMINJAM", "STATUS", "TANGGAL PINJAM", "TANGGAL KEMBALI", "JUDUL BUKU", "JUDUL SKRIPSI" }));
+        cbx_cari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NO PEMINJAMAN", "NAMA PEMINJAM", "STATUS", "JUDUL BUKU", "JUDUL SKRIPSI" }));
         cbx_cari.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         tf_cari.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -1979,41 +1979,31 @@ public class MenuPeminjaman extends javax.swing.JPanel {
     }//GEN-LAST:event_tf_cariFocusLost
 
     private void btn_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cariActionPerformed
-        try {
-            String sc = tf_cari.getText();
-            SimpleDateFormat tanggal = new SimpleDateFormat("yyyy-MM-dd");
-            List<Peminjaman> list = new ArrayList();
-            if (sc.equals("Cari")) {
-                list = servis.ambilData();
-            } else {
-                switch (cbx_cari.getSelectedIndex()) {
-                    case 0:
-                        list = servis.getByNO(sc);
-                        break;
-                    case 1:
-                        list = servis.getByPeminjam(sc);
-                        break;
-                    case 2:
-                        list = servis.getBystatus(sc);
-                        break;
-                    case 3:
-                        list = servis.getByTglPinjam(tanggal.parse(sc));
-                        break;
-                    case 4:
-                        list = servis.getByTglKembali(tanggal.parse(sc));
-                        break;
-                    case 5:
-                        list = servis.getByBuku(sc);
-                        break;
-                    case 6:
-                        list = servis.getBySkripsi(sc);
-                        break;
-                }
+        String sc = tf_cari.getText();
+        SimpleDateFormat tanggal = new SimpleDateFormat("yyyy-MM-dd");
+        List<Peminjaman> list = new ArrayList();
+        if (sc.equals("Cari")) {
+            list = servis.ambilData();
+        } else {
+            switch (cbx_cari.getSelectedIndex()) {
+                case 0:
+                    list = servis.getByNO(sc);
+                    break;
+                case 1:
+                    list = servis.getByPeminjam(sc);
+                    break;
+                case 2:
+                    list = servis.getBystatus(sc);
+                    break;
+                case 3:
+                    list = servis.getByBuku(sc);
+                    break;
+                case 4:
+                    list = servis.getBySkripsi(sc);
+                    break;
             }
-            tbl.setData(list);
-        } catch (ParseException ex) {
-            Logger.getLogger(MenuPeminjaman.class.getName()).log(Level.SEVERE, null, ex);
         }
+        tbl.setData(list);
     }//GEN-LAST:event_btn_cariActionPerformed
 
 

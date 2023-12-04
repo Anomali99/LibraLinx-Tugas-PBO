@@ -351,62 +351,63 @@ public class MenuLaporan extends javax.swing.JPanel {
 
     private void btn_cetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cetakActionPerformed
         String cr = tf_cari.getText();
-        if (cr.equals("Cari")) {
-            switch (cbx_pilih.getSelectedIndex()) {
+        if (cbx_pilih.getSelectedIndex() == 4) {
+            switch (cbx_cari.getSelectedIndex()) {
                 case 0:
-                    resetPanel();
+                    print = servis.laporanPeminjamanPerbulanPinjam(pn_print);
                     break;
                 case 1:
-                    print = servis.cetakAnggota(pn_print);
-                    pn_email.setVisible(true);
+                    print = servis.laporanPeminjamanPerbulanKembali(pn_print);
                     break;
                 case 2:
-                    print = servis.cetakBuku(pn_print);
-                    pn_email.setVisible(true);
+                    print = servis.laporanPeminjamanTerbanyak(pn_print);
                     break;
                 case 3:
-                    print = servis.cetakSkripsi(pn_print);
-                    pn_email.setVisible(true);
+                    print = servis.laporanPeminjamanPerAngkatan(pn_print);
                     break;
                 case 4:
-                    switch (cbx_cari.getSelectedIndex()) {
-                        case 0:
-                            print = servis.laporanPeminjamanPerbulanPinjam(pn_print);
-                            break;
-                        case 1:
-                            print = servis.laporanPeminjamanPerbulanKembali(pn_print);
-                            break;
-                        case 2:
-                            print = servis.laporanPeminjamanTerbanyak(pn_print);
-                            break;
-                        case 3:
-                            print = servis.laporanPeminjamanPerAngkatan(pn_print);
-                            break;
-                        case 4:
-                            print = servis.laporanPeminjamanKategoriTerbanyak(pn_print);
-                            break;
-                    }
-                    pn_email.setVisible(true);
+                    print = servis.laporanPeminjamanKategoriTerbanyak(pn_print);
                     break;
             }
+            pn_email.setVisible(true);
         } else {
-            String k = cbx_cari.getSelectedItem().toString();
-            switch (cbx_pilih.getSelectedIndex()) {
-                case 0:
-                    resetPanel();
-                    break;
-                case 1:
-                    print = servis.cetakAnggotaCari(pn_print, cr, k);
-                    pn_email.setVisible(true);
-                    break;
-                case 2:
-                    print = servis.cetakBukuCari(pn_print, cr, k);
-                    pn_email.setVisible(true);
-                    break;
-                case 3:
-                    print = servis.cetakSkripsiCari(pn_print, cr, k);
-                    pn_email.setVisible(true);
-                    break;
+            if (cr.equals("Cari")) {
+                switch (cbx_pilih.getSelectedIndex()) {
+                    case 0:
+                        resetPanel();
+                        break;
+                    case 1:
+                        print = servis.cetakAnggota(pn_print);
+                        pn_email.setVisible(true);
+                        break;
+                    case 2:
+                        print = servis.cetakBuku(pn_print);
+                        pn_email.setVisible(true);
+                        break;
+                    case 3:
+                        print = servis.cetakSkripsi(pn_print);
+                        pn_email.setVisible(true);
+                        break;
+                }
+            } else {
+                String k = cbx_cari.getSelectedItem().toString();
+                switch (cbx_pilih.getSelectedIndex()) {
+                    case 0:
+                        resetPanel();
+                        break;
+                    case 1:
+                        print = servis.cetakAnggotaCari(pn_print, cr, k);
+                        pn_email.setVisible(true);
+                        break;
+                    case 2:
+                        print = servis.cetakBukuCari(pn_print, cr, k);
+                        pn_email.setVisible(true);
+                        break;
+                    case 3:
+                        print = servis.cetakSkripsiCari(pn_print, cr, k);
+                        pn_email.setVisible(true);
+                        break;
+                }
             }
         }
         jLabel1.requestFocus();

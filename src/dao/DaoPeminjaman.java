@@ -67,32 +67,6 @@ public class DaoPeminjaman implements ServicePeminjaman {
     }
 
     @Override
-    public List<Peminjaman> getByTglPinjam(Date tgl) {
-        String sql = "SELECT p FROM Peminjaman p WHERE p.tanggalPinjam = :tanggalPinjam ORDER BY p.peminjamanPK.noPeminjaman";
-        EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery(sql);
-        query.setParameter("tanggalPinjam", tgl);
-        List<Peminjaman> list = query.getResultList();
-        em.getTransaction().commit();
-        em.close();
-        return list;
-    }
-
-    @Override
-    public List<Peminjaman> getByTglKembali(Date tgl) {
-        String sql = "SELECT p FROM Peminjaman p WHERE p.tanggalKembali = :tanggalKembali ORDER BY p.peminjamanPK.noPeminjaman";
-        EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery(sql);
-        query.setParameter("tanggalKembali", tgl);
-        List<Peminjaman> list = query.getResultList();
-        em.getTransaction().commit();
-        em.close();
-        return list;
-    }
-
-    @Override
     public List<Peminjaman> getByPeminjam(String nama) {
         String sql = "SELECT p FROM Peminjaman p WHERE p.peminjamanPK.idPeminjam IN ("
                 + "SELECT pj.idPeminjam FROM Peminjam pj WHERE LOWER(pj.nama) LIKE :nama) "
@@ -191,7 +165,7 @@ public class DaoPeminjaman implements ServicePeminjaman {
         EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
         em.getTransaction().begin();
         Query query = em.createQuery(sql);
-        query.setParameter("judul", buku.toLowerCase());
+        query.setParameter("judul", "%"+buku.toLowerCase()+"%");
         List<Peminjaman> list = query.getResultList();
         em.getTransaction().commit();
         em.close();
@@ -207,7 +181,7 @@ public class DaoPeminjaman implements ServicePeminjaman {
         EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
         em.getTransaction().begin();
         Query query = em.createQuery(sql);
-        query.setParameter("judul", skripsi.toLowerCase());
+        query.setParameter("judul", "%"+skripsi.toLowerCase()+"%");
         List<Peminjaman> list = query.getResultList();
         em.getTransaction().commit();
         em.close();
