@@ -558,7 +558,7 @@ public class TambahBuku extends javax.swing.JDialog {
         pk.setVisible(true);
         String id = pk.mod.getIdKategori();
         String kategori = pk.mod.getKategori();
-        tbl.addRow(new Object[]{id,kategori});
+        tbl.addRow(new Object[]{id, kategori});
         jLabel1.requestFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -635,7 +635,7 @@ public class TambahBuku extends javax.swing.JDialog {
     }//GEN-LAST:event_btn_batalActionPerformed
 
     private void btn_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanActionPerformed
-        mod.setIdBuku(tf_id.getText());
+         mod.setIdBuku(tf_id.getText());
         mod.setJudul(tf_judul.getText());
         mod.setSubjudul(tf_subjudul.getText());
         mod.setBahasa(tf_bahasa.getText());
@@ -653,7 +653,7 @@ public class TambahBuku extends javax.swing.JDialog {
         int indexP = tblP.getRowCount() - 1;
 
         for (int i = 0; i <= indexK; i++) {
-            Kategori  k = servisK.getById(tblK.getValueAt(i, 0).toString());
+            Kategori k = servisK.getById(tblK.getValueAt(i, 0).toString());
             kategori.add(k);
         }
         for (int i = 0; i <= indexP; i++) {
@@ -664,7 +664,14 @@ public class TambahBuku extends javax.swing.JDialog {
         mod.setKategoriCollection(kategori);
         mod.setPengarang(pengarang);
         if (jLabel1.getText().equalsIgnoreCase("Tambah Data Buku")) {
-            servis.tambahData(mod);
+            Buku b = servis.getById(mod.getIdBuku());
+            if (b == null) {
+                servis.tambahData(mod);
+            } else {
+                JOptionPane.showMessageDialog(this, "Terdapat Buku dengan ISBN "+b.getIdBuku()+"\nJumlah awal "+b.getJumlahSalinan()+"");
+                b.setJumlahSalinan(b.getJumlahSalinan()+mod.getJumlahSalinan());
+                servis.ubahData(mod);
+            }
         } else {
             servis.ubahData(mod);
         }
@@ -833,9 +840,9 @@ public class TambahBuku extends javax.swing.JDialog {
         }
 
         DefaultTableModel tbl = (DefaultTableModel) tbl_kategori.getModel();
-        if (mod.getKategoriCollection()!= null) {
+        if (mod.getKategoriCollection() != null) {
             for (Kategori data : mod.getKategoriCollection()) {
-                tbl.addRow(new Object[]{data.getIdKategori(),data.getKategori()});
+                tbl.addRow(new Object[]{data.getIdKategori(), data.getKategori()});
             }
         }
 

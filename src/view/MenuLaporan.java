@@ -458,6 +458,25 @@ public class MenuLaporan extends javax.swing.JPanel {
             case 3:
                 y = "Laporan Data Skripsi";
                 break;
+            case 4:
+                switch (cbx_cari.getSelectedIndex()) {
+                    case 0:
+                        y = "Laporan Peminjaman Perbulan Pinjam";
+                        break;
+                    case 1:
+                        y = "Laporan Peminjaman Perbulan Kembali";
+                        break;
+                    case 2:
+                        y = "Laporan Peminjaman Terbanyak";
+                        break;
+                    case 3:
+                        y = "Laporan Peminjaman Perangkatan";
+                        break;
+                    case 4:
+                        y = "Laporan Peminjaman Kategori Terbanyak";
+                        break;
+                }
+                break;
         }
         sevEmail.kririm(x, y, y, print);
     }//GEN-LAST:event_btn_tambahActionPerformed

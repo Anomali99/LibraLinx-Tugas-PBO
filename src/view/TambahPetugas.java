@@ -30,7 +30,7 @@ public class TambahPetugas extends javax.swing.JDialog {
         tf_id.setText(servis.nomer());
         unhide1.setVisible(false);
         unhide2.setVisible(false);
-        cbx_jk.setEditable(false);
+        tf_jk.setVisible(false);
     }
 
     public TambahPetugas(java.awt.Frame parent, boolean modal, String id) {
@@ -38,6 +38,7 @@ public class TambahPetugas extends javax.swing.JDialog {
         initComponents();
         jLabel1.requestFocus();
         mod = servis.getById(id);
+        cbx_jk.setEditable(false);
 
         setForm(mod);
     }
@@ -83,26 +84,24 @@ public class TambahPetugas extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         unhide2 = new javax.swing.JLabel();
         hide2 = new javax.swing.JLabel();
+        tf_jk = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("LibraLinx Tambah Buku");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/iconlibralinx.png")).getImage());
+        getContentPane().setLayout(new java.awt.CardLayout());
 
         jPanelGradientVertikal1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 50, 124)));
         jPanelGradientVertikal1.setCStart(new java.awt.Color(68, 50, 124));
-        jPanelGradientVertikal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Tambah Petugas");
-        jPanelGradientVertikal1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 60));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         unhide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/unhide.png"))); // NOI18N
         unhide1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -110,7 +109,6 @@ public class TambahPetugas extends javax.swing.JDialog {
                 unhide1MouseClicked(evt);
             }
         });
-        jPanel2.add(unhide1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         hide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hide.png"))); // NOI18N
         hide1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,29 +116,38 @@ public class TambahPetugas extends javax.swing.JDialog {
                 hide1MouseClicked(evt);
             }
         });
-        jPanel2.add(hide1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 30, 20));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hide1)
+                    .addComponent(unhide1)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hide1)
+            .addComponent(unhide1)
+        );
 
         tf_id.setEditable(false);
         tf_id.setForeground(new java.awt.Color(68, 50, 124));
         tf_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(tf_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 37, 208, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(68, 50, 124));
         jLabel2.setText("ID Petugas");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(68, 50, 124));
         jLabel3.setText("Nama");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 6, -1, -1));
 
         tf_nama.setForeground(new java.awt.Color(68, 50, 124));
         tf_nama.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(tf_nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 37, 583, 30));
 
         tf_tlp.setForeground(new java.awt.Color(68, 50, 124));
         tf_tlp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
@@ -149,25 +156,20 @@ public class TambahPetugas extends javax.swing.JDialog {
                 tf_tlpKeyTyped(evt);
             }
         });
-        jPanel1.add(tf_tlp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 208, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(68, 50, 124));
         jLabel7.setText("Email");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
 
         tf_email.setForeground(new java.awt.Color(68, 50, 124));
         tf_email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 203, 30));
 
         tf_alamat.setForeground(new java.awt.Color(68, 50, 124));
         tf_alamat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(tf_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 368, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(68, 50, 124));
         jLabel8.setText("Alamat");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, -1, -1));
 
         btn_simpan.setBackground(new java.awt.Color(0, 200, 0));
         btn_simpan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -178,7 +180,6 @@ public class TambahPetugas extends javax.swing.JDialog {
                 btn_simpanActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(692, 325, -1, -1));
 
         btn_batal.setBackground(new java.awt.Color(200, 0, 0));
         btn_batal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -189,30 +190,24 @@ public class TambahPetugas extends javax.swing.JDialog {
                 btn_batalActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 325, 117, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(68, 50, 124));
         jLabel9.setText("Telephone");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(68, 50, 124));
         jLabel10.setText("Username");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         tf_username.setForeground(new java.awt.Color(68, 50, 124));
         tf_username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(tf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 208, 30));
 
         tf_pass.setForeground(new java.awt.Color(68, 50, 124));
         tf_pass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(tf_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 208, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(68, 50, 124));
         jLabel11.setText("Password");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         tf_pass1.setForeground(new java.awt.Color(68, 50, 124));
         tf_pass1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
@@ -226,38 +221,30 @@ public class TambahPetugas extends javax.swing.JDialog {
                 tf_pass1KeyTyped(evt);
             }
         });
-        jPanel1.add(tf_pass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 203, 30));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(68, 50, 124));
         jLabel12.setText("Ulangi Password");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
 
         cbx_jk.setForeground(new java.awt.Color(68, 50, 124));
         cbx_jk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Jenis Kelamin-", "L", "P" }));
         cbx_jk.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(cbx_jk, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 368, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(68, 50, 124));
         jLabel6.setText("Jenis Kelamin");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
 
         cbx_level.setForeground(new java.awt.Color(68, 50, 124));
         cbx_level.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Jenis Level-", "Admin", "Staff" }));
         cbx_level.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(68, 50, 124)));
-        jPanel1.add(cbx_level, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 203, 30));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(68, 50, 124));
         jLabel13.setText("Level");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 209, 15));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         unhide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/unhide.png"))); // NOI18N
         unhide2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -265,7 +252,6 @@ public class TambahPetugas extends javax.swing.JDialog {
                 unhide2MouseClicked(evt);
             }
         });
-        jPanel3.add(unhide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         hide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hide.png"))); // NOI18N
         hide2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -273,22 +259,174 @@ public class TambahPetugas extends javax.swing.JDialog {
                 hide2MouseClicked(evt);
             }
         });
-        jPanel3.add(hide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
-
-        jPanelGradientVertikal1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 815, 360));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelGradientVertikal1, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hide2)
+                    .addComponent(unhide2)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelGradientVertikal1, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(hide2)
+            .addComponent(unhide2)
         );
+
+        tf_jk.setEditable(false);
+        tf_jk.setForeground(new java.awt.Color(68, 50, 124));
+        tf_jk.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_jk.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(68, 50, 124)));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(tf_nama))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel2)
+                                .addGap(128, 128, 128)
+                                .addComponent(jLabel3))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel9)
+                                .addGap(130, 130, 130)
+                                .addComponent(jLabel7)
+                                .addGap(164, 164, 164)
+                                .addComponent(jLabel8))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel10)
+                                .addGap(135, 135, 135)
+                                .addComponent(jLabel13)
+                                .addGap(166, 166, 166)
+                                .addComponent(jLabel6))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel11)
+                                .addGap(90, 90, 90)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel12)
+                                .addGap(30, 30, 30)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(tf_pass1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(230, 230, 230)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 247, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_batal, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(btn_simpan))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(cbx_level, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
+                                .addComponent(cbx_jk, 0, 1, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tf_tlp, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(tf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
+                                .addComponent(tf_alamat)))))
+                .addGap(10, 10, 10))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_tlp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel6))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbx_level, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cbx_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_jk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_pass1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_batal)
+                    .addComponent(btn_simpan))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanelGradientVertikal1Layout = new javax.swing.GroupLayout(jPanelGradientVertikal1);
+        jPanelGradientVertikal1.setLayout(jPanelGradientVertikal1Layout);
+        jPanelGradientVertikal1Layout.setHorizontalGroup(
+            jPanelGradientVertikal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGradientVertikal1Layout.createSequentialGroup()
+                .addGroup(jPanelGradientVertikal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelGradientVertikal1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(1, 1, 1))
+        );
+        jPanelGradientVertikal1Layout.setVerticalGroup(
+            jPanelGradientVertikal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGradientVertikal1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanelGradientVertikal1, "card2");
 
         pack();
         setLocationRelativeTo(null);
@@ -464,6 +602,7 @@ public class TambahPetugas extends javax.swing.JDialog {
     private javax.swing.JTextField tf_alamat;
     private javax.swing.JTextField tf_email;
     private javax.swing.JTextField tf_id;
+    private javax.swing.JTextField tf_jk;
     private javax.swing.JTextField tf_nama;
     private javax.swing.JPasswordField tf_pass;
     private javax.swing.JPasswordField tf_pass1;
@@ -482,6 +621,7 @@ public class TambahPetugas extends javax.swing.JDialog {
         tf_email.setText(mod.getEmail());
         tf_alamat.setText(mod.getAlamat());
         cbx_level.setSelectedItem(mod.getLevel());
+        tf_jk.setText(mod.getJenisKelamin().toString());
         cbx_jk.setSelectedItem(mod.getJenisKelamin().toString());
         tf_username.setText(mod.getUsername());
 
@@ -495,7 +635,7 @@ public class TambahPetugas extends javax.swing.JDialog {
         tf_tlp.setEditable(false);
         tf_email.setEditable(false);
         tf_alamat.setEditable(false);
-        cbx_jk.setEditable(false);
+        cbx_jk.setVisible(false);
         tf_username.setEditable(false);
         jPanel3.setVisible(false);
         jPanel2.setVisible(false);

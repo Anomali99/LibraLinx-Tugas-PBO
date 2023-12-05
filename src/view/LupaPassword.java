@@ -272,7 +272,6 @@ public class LupaPassword extends javax.swing.JDialog {
         });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         unhide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/unhide.png"))); // NOI18N
         unhide1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -280,7 +279,6 @@ public class LupaPassword extends javax.swing.JDialog {
                 unhide1MouseClicked(evt);
             }
         });
-        jPanel2.add(unhide1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         hide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hide.png"))); // NOI18N
         hide1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -288,7 +286,22 @@ public class LupaPassword extends javax.swing.JDialog {
                 hide1MouseClicked(evt);
             }
         });
-        jPanel2.add(hide1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(unhide1)
+                    .addComponent(hide1)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(unhide1)
+            .addComponent(hide1)
+        );
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(68, 50, 124));
@@ -304,7 +317,6 @@ public class LupaPassword extends javax.swing.JDialog {
         jLabel11.setText("Password");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         unhide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/unhide.png"))); // NOI18N
         unhide2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -312,7 +324,6 @@ public class LupaPassword extends javax.swing.JDialog {
                 unhide2MouseClicked(evt);
             }
         });
-        jPanel3.add(unhide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         hide2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hide.png"))); // NOI18N
         hide2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -320,7 +331,22 @@ public class LupaPassword extends javax.swing.JDialog {
                 hide2MouseClicked(evt);
             }
         });
-        jPanel3.add(hide2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(unhide2)
+                    .addComponent(hide2)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(unhide2)
+            .addComponent(hide2)
+        );
 
         javax.swing.GroupLayout step3Layout = new javax.swing.GroupLayout(step3);
         step3.setLayout(step3Layout);

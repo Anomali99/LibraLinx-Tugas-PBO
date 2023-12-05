@@ -68,7 +68,6 @@ public class FormLogin extends javax.swing.JFrame {
         jPanelCustom1.setKananBawah(40);
         jPanelCustom1.setKiriAtas(40);
         jPanelCustom1.setKiriBawah(40);
-        jPanelCustom1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/batal.png"))); // NOI18N
@@ -77,7 +76,6 @@ public class FormLogin extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanelCustom1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 24, 40));
 
         tf_user.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tf_user.setForeground(new java.awt.Color(68, 50, 124));
@@ -97,7 +95,6 @@ public class FormLogin extends javax.swing.JFrame {
                 tf_userKeyTyped(evt);
             }
         });
-        jPanelCustom1.add(tf_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 250, 40));
 
         tf_pasword.setForeground(new java.awt.Color(68, 50, 124));
         tf_pasword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -116,7 +113,6 @@ public class FormLogin extends javax.swing.JFrame {
                 tf_paswordKeyTyped(evt);
             }
         });
-        jPanelCustom1.add(tf_pasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 250, 40));
 
         btn_login.setBackground(new java.awt.Color(68, 50, 124));
         btn_login.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -137,11 +133,9 @@ public class FormLogin extends javax.swing.JFrame {
                 btn_loginActionPerformed(evt);
             }
         });
-        jPanelCustom1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 120, -1));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login.png"))); // NOI18N
-        jPanelCustom1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 270, 250));
 
         jPanelCustom2.setBackground(new java.awt.Color(204, 204, 204));
         jPanelCustom2.setKananAtas(40);
@@ -171,8 +165,6 @@ public class FormLogin extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jPanelCustom1.add(jPanelCustom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 100));
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(68, 50, 124));
         jLabel4.setText("Lupa password ?");
@@ -181,7 +173,47 @@ public class FormLogin extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanelCustom1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        javax.swing.GroupLayout jPanelCustom1Layout = new javax.swing.GroupLayout(jPanelCustom1);
+        jPanelCustom1.setLayout(jPanelCustom1Layout);
+        jPanelCustom1Layout.setHorizontalGroup(
+            jPanelCustom1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanelCustom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(tf_pasword, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel4))
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanelCustom1Layout.setVerticalGroup(
+            jPanelCustom1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                .addGroup(jPanelCustom1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelCustom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(tf_pasword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanelCustom1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanelCustom1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_login)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
