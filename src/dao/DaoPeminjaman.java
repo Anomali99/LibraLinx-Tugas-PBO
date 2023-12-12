@@ -83,7 +83,7 @@ public class DaoPeminjaman implements ServicePeminjaman {
 
     @Override
     public List<Peminjaman> getBystatus(String status) {
-        String sql = "SELECT p FROM Peminjaman p WHERE LOWER(p.status) = :status ORDER BY p.peminjamanPK.noPeminjaman";
+        String sql = "SELECT p FROM Peminjaman p WHERE LOWER(p.status) LIKE :status ORDER BY p.peminjamanPK.noPeminjaman";
         EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
         em.getTransaction().begin();
         Query query = em.createQuery(sql);
@@ -96,7 +96,7 @@ public class DaoPeminjaman implements ServicePeminjaman {
 
     @Override
     public List<Peminjaman> getByNO(String no) {
-        String sql = "SELECT p FROM Peminjaman p WHERE LOWER(p.peminjamanPK.noPeminjaman) = :noPeminjaman ORDER BY p.peminjamanPK.noPeminjaman";
+        String sql = "SELECT p FROM Peminjaman p WHERE LOWER(p.peminjamanPK.noPeminjaman) LIKE :noPeminjaman ORDER BY p.peminjamanPK.noPeminjaman";
         EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
         em.getTransaction().begin();
         Query query = em.createQuery(sql);
@@ -125,7 +125,7 @@ public class DaoPeminjaman implements ServicePeminjaman {
     public String nomer() {
         String sql = "SELECT RIGHT(NO_PEMINJAMAN, 3) AS nomor "
                 + "FROM PEMINJAMAN WHERE NO_PEMINJAMAN LIKE 'T%' "
-                + "ORDER BY NO_PEMINJAMAN DESC LIMIT 1;";
+                + "ORDER BY nomor DESC LIMIT 1;";
         EntityManager em = Persistence.createEntityManagerFactory("LibraLinxPU").createEntityManager();
         em.getTransaction().begin();
         Query query = em.createNativeQuery(sql);
