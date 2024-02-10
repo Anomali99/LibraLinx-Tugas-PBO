@@ -23,7 +23,8 @@ LibraLinx adalah aplikasi untuk memanjemen Perpustakan seperti peminjaman, sumba
 - PostgreSQL JDBC Driver `NetBeans`
 - Absolute Layout `NetBeans`
 - EnclipseLink (JPA 2.1) `NetBeans`
-- [Library lainnya](https://drive.google.com/drive/folders/12aqJtgMWrztnQLhqt8XpMU1gMrIvPGSz?usp=sharing)
+- [JasperReport](https://drive.google.com/drive/folders/1j5_8GSWe5ZPekZ98PfehL3avy_HWa5Jr?usp=drive_link)
+- [JavaxMail](https://drive.google.com/drive/folders/1ZxoJk1mjWt1YF1eKs9BGL3a7xHVf7vnR?usp=drive_link)
 
 ## Preview
 ##### Form Login
@@ -1587,6 +1588,12 @@ INSERT INTO detail_skripsi (no_peminjaman, id_petugas, id_peminjam, id_skripsi, 
 ('T350405148','PT001','PM148','SK231202148',1),
 ('T350510149','PT001','PM149','SK231202149',1),
 ('T350628150','PT001','PM150','SK231202150',1);
+```
+
+Sesuaikan email dan password aplikasi
+```sh
+private String GMail = "emailmu@gmail.com";
+private String pass = "abcd abcd abcd abcd";
 ```
 
 > Kemudia login dengan username `Anomali99` dan password `5127`
